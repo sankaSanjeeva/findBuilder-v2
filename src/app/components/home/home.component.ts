@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToCategory(): void {
+    document.getElementById('category').scrollIntoView({behavior: 'smooth'});
+  }
+
 }

@@ -16,7 +16,7 @@ export class NavBarComponent implements OnInit {
 
   @HostListener('window:scroll')
   onScroll(): void {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 150) {
       this.navBarChange = true;
     } else {
       this.navBarChange = false;
@@ -25,6 +25,14 @@ export class NavBarComponent implements OnInit {
 
   backToTop(): void {
     window.scrollTo(0, 0);
+  }
+
+  openSideMenu() {
+    document.getElementById('nav-bar').className = 'container open-side-menu';
+  }
+
+  closeSideMenu() {
+    document.getElementById('nav-bar').className = 'container close-side-menu';
   }
 
 }
