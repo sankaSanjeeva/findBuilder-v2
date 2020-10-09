@@ -1,0 +1,135 @@
+[
+    {
+        "type": "Carpenter",
+        "id": 100,
+        "src": "assets/svg/home/carpenter.svg",
+        "routerLink": "/builders/carpenter",
+        "alt": "carpenter"
+    },
+    {
+        "type": "Plumbers",
+        "id": 101,
+        "src": "assets/svg/home/plumbers.svg",
+        "routerLink": "/builders/plumbers",
+        "alt": "plumbers"
+    },
+    {
+        "type": "Mesons",
+        "id": 102,
+        "src": "assets/svg/home/mesons.svg",
+        "routerLink": "/builders/mesons",
+        "alt": "mesons"
+    },
+    {
+        "type": "Painters",
+        "id": 103,
+        "src": "assets/svg/home/painters.svg",
+        "routerLink": "/builders/painters",
+        "alt": "painters"
+    },
+    {
+        "type": "Welders",
+        "id": 104,
+        "src": "assets/svg/home/welders.svg",
+        "routerLink": "/builders/welders",
+        "alt": "welders"
+    },
+    {
+        "type": "Electricians",
+        "id": 105,
+        "src": "assets/svg/home/electricians.svg",
+        "routerLink": "/builders/electricians",
+        "alt": "electricians"
+    },
+    {
+        "type": "Tiles Workers",
+        "id": 106,
+        "src": "assets/svg/home/tilesWorkers.svg",
+        "routerLink": "/builders/tilesWorkers",
+        "alt": "tilesWorkers"
+    },
+    {
+        "type": "Stone, Sand, Soil",
+        "id": 107,
+        "src": "assets/svg/home/stoneSandSoil.svg",
+        "routerLink": "/builders/stoneSandSoil",
+        "alt": "stoneSandSoil"
+    },
+    {
+        "type": "Landscaping",
+        "id": 108,
+        "src": "assets/svg/home/landscaping.svg",
+        "routerLink": "/builders/landscaping",
+        "alt": "landscaping"
+    },
+    {
+        "type": "Contractors",
+        "id": 109,
+        "src": "assets/svg/home/contractors.svg",
+        "routerLink": "/builders/contractors",
+        "alt": "contractors"
+    },
+    {
+        "type": "Ceiling",
+        "id": 110,
+        "src": "assets/svg/home/ceiling.svg",
+        "routerLink": "/builders/ceiling",
+        "alt": "ceiling"
+    },
+    {
+        "type": "aluminum",
+        "id": 111,
+        "src": "assets/svg/home/aluminum.svg",
+        "routerLink": "/builders/aluminum",
+        "alt": "Aluminum"
+    },
+    {
+        "type": "CCTV",
+        "id": 112,
+        "src": "assets/svg/home/cctv.svg",
+        "routerLink": "/builders/cctv",
+        "alt": "cctv"
+    },
+    {
+        "type": "Solar Panel",
+        "id": 113,
+        "src": "assets/svg/home/solarPanel.svg",
+        "routerLink": "/builders/solarPanel",
+        "alt": "solarPanel"
+    },
+    {
+        "type": "Cleaners",
+        "id": 114,
+        "src": "assets/svg/home/cleaners.svg",
+        "routerLink": "/builders/cleaners",
+        "alt": "cleaners"
+    },
+    {
+        "type": "Cushion Workers",
+        "id": 115,
+        "src": "assets/svg/home/cushionWorkers.svg",
+        "routerLink": "/builders/cushionWorkers",
+        "alt": "cushionWorkers"
+    },
+    {
+        "type": "A/C",
+        "id": 116,
+        "src": "assets/svg/home/ac.svg",
+        "routerLink": "/builders/ac",
+        "alt": "ac"
+    },
+    {
+        "type": "Doser Freight",
+        "id": 117,
+        "src": "assets/svg/home/doserFreight.svg",
+        "routerLink": "/builders/doserFreight",
+        "alt": "doserFreight"
+    },
+    {
+        "type": "Renters",
+        "id": 118,
+        "src": "assets/svg/home/renters.svg",
+        "routerLink": "/builders/renters",
+        "alt": "renters"
+    }
+]

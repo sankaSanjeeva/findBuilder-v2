@@ -8,10 +8,10 @@
         </g>
     </svg>
 </div>
-<header [ngClass]="{'scrolling-active': navBarChange === true}">
+<header [ngClass]="{'scrolling-active': navBarChange}">
     <div id="nav-bar" class="container close-side-menu">
         <nav class="nav">
-            <a routerLink="/home" class="logo" (click)="closeSideMenu()">TOURS.</a>
+            <a routerLink="/home" class="logo" (click)="closeSideMenu()">findBuilder</a>
             <ul class="nav-list">
                 <li>
                     <a routerLink="/home" routerLinkActive="nav-active" class="nav-link" (click)="closeSideMenu()">home</a>

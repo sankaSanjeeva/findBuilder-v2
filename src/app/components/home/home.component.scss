@@ -1,3 +1,5 @@
+$navbar-height-s: 65px; //--navbar-height-secondary
+
 .back-layer{
     width: 100%;
     height: 100vh;
@@ -20,81 +22,80 @@
 }
 
 .category {
-    // margin-top: 100vh;
+    --navbar-height-secondary: 65px;
     width: 100%;
-    background-color: white;
-}
+    padding-top: $navbar-height-s;
 
-.content {
-    // display: flex;
-    // justify-content: center;
-    min-height: calc(100vh - 6.6rem);
-    margin: auto;
-    // margin: 50px auto 30px;
-    padding: 50px 16px;
-    max-width: 960px;
-    // flex-direction: column;
-    // align-items: center;
-}
+    .white-background {
+        background-color: white;
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* margin-top: 16px; */
-}
+        .content {
+            min-height: calc(100vh - var(--navbar-height-secondary));
+            margin: auto;
+            padding: 50px 16px;
+            max-width: 960px;
 
-.icon-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 10px;
-}
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
 
-.icon-label {
-    color: #6e7b81;
-    font-size: 14px;
-    max-width: 95px;
-    text-align: center;
-    white-space: pre-line;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 1s ease-out;
-}
+                .icon-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 10px 10px;
+                    text-decoration: none;
+                    cursor: pointer;
 
-.circle-link {
-    height: 75px;
-    width: 75px;
-    border-radius: 75px;
-    margin: 10px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-}
+                    .circle-link {
+                        height: 75px;
+                        width: 75px;
+                        border-radius: 75px;
+                        margin: 10px;
+                        background-color: white;
+                        border: 1px solid #eeeeee;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                        transition: 1s ease-out;
+                    }
 
-.circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-}
+                    .circle-link:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                    }
 
-.icon-container:hover .circle-link {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-}
+                    .icon-label {
+                        color: #6e7b81;
+                        font-size: 14px;
+                        max-width: 95px;
+                        text-align: center;
+                        white-space: pre-line;
+                        cursor: pointer;
+                        // text-decoration: none;
+                        transition: 1s ease-out;
+                    }
+                }
 
-.icon-container:hover .icon-label {
-    color: #000000;
+                .icon-container:hover .circle-link {
+                    transform: translateY(-3px);
+                    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+                }
+                
+                .icon-container:hover .icon-label {
+                    color: #000000;
+                }
+            }
+        }
+    }
 }
-
 
 .welcome-note {
+    --navbar-height-secondary: 65px;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - var(--navbar-height-secondary));
     position: relative;
     display: flex;
     justify-content: center;

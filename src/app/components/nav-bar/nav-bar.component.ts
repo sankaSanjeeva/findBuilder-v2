@@ -27,11 +27,11 @@ export class NavBarComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  openSideMenu() {
+  openSideMenu(): void {
     document.getElementById('nav-bar').className = 'container open-side-menu';
   }
 
-  closeSideMenu() {
+  closeSideMenu(): void {
     document.getElementById('nav-bar').className = 'container close-side-menu';
   }
 

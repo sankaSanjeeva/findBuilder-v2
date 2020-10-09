@@ -1,0 +1,90 @@
+<div class="content">
+    <div class="filter-search-options" [ngStyle]="{'height': navBarChange ? 'calc(100vh - 80px)' : 'calc(100vh - 115px)'}">
+        <!-- <div class="back-button">
+            <a (click)="goBack()" title="Go to back" class="back-button-icon">
+                <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <g>
+                        <path d="M437.02,74.982C388.667,26.628,324.38,0,256,0S123.333,26.628,74.98,74.982C26.628,123.333,0,187.619,0,256
+                s26.628,132.667,74.98,181.019C123.333,485.372,187.62,512,256,512s132.667-26.628,181.02-74.981
+                C485.372,388.667,512,324.381,512,256S485.372,123.333,437.02,74.982z M256,491.602c-129.911,0-235.602-105.69-235.602-235.602
+                S126.089,20.398,256,20.398S491.602,126.089,491.602,256S385.911,491.602,256,491.602z" />
+                    </g>
+                    <g>
+                        <path d="M450.365,178.795C428.7,124.297,384.824,81.139,329.987,60.387c-5.27-1.996-11.155,0.662-13.149,5.929
+                c-1.995,5.268,0.66,11.156,5.929,13.149c49.491,18.728,89.089,57.679,108.643,106.865c1.589,3.998,5.424,6.435,9.48,6.435
+                c1.253,0,2.528-0.234,3.766-0.724C449.89,189.959,452.447,184.03,450.365,178.795z" />
+                    </g>
+                    <g>
+                        <path d="M291.371,49.898c-11.606-1.979-23.505-2.981-35.371-2.981c-5.633,0-10.199,4.567-10.199,10.199S250.367,67.315,256,67.315
+                c10.72,0,21.467,0.906,31.943,2.69c0.58,0.1,1.157,0.148,1.726,0.148c4.88,0,9.195-3.515,10.043-8.488
+                C300.657,56.112,296.923,50.844,291.371,49.898z" />
+                    </g>
+                    <g>
+                        <path d="M227.57,258.732l77.61-77.61c5.596-5.595,8.677-13.036,8.677-20.948c0-7.914-3.082-15.354-8.677-20.948
+                c-5.595-5.596-13.035-8.677-20.948-8.677s-15.354,3.082-20.949,8.677l-98.558,98.558c-11.551,11.552-11.551,30.346,0,41.897
+                l98.559,98.558c5.596,5.596,13.036,8.677,20.948,8.677s15.351-3.081,20.948-8.677c5.596-5.595,8.677-13.036,8.677-20.948
+                c0-7.914-3.082-15.354-8.677-20.948L227.57,258.732z M290.755,363.816c-1.743,1.743-4.06,2.703-6.524,2.703
+                c-2.464,0-4.781-0.96-6.524-2.703l-98.558-98.558c-3.597-3.597-3.597-9.452,0-13.049l98.559-98.558
+                c1.743-1.743,4.059-2.703,6.524-2.703s4.781,0.96,6.522,2.705c1.743,1.742,2.703,4.058,2.703,6.523c0,2.464-0.96,4.78-2.703,6.523
+                l-84.822,84.822c-3.983,3.984-3.983,10.442,0,14.425l84.823,84.823c1.743,1.742,2.703,4.059,2.703,6.523
+                S292.497,362.073,290.755,363.816z" />
+                    </g>
+                </svg>
+            </a>
+        </div> -->
+        <div class="filter-search-category">
+            <div class="filter">
+                <span>Filter</span>
+                <input type="text" placeholder="District">
+                <input type="text" id="cityInput" [(ngModel)]="selectedCity.name" (ngModelChange)="cityChanged($event)" placeholder="City">
+                <div class="city-list">
+                    <div *ngIf="searchLoading" class="loading-svg">
+                        <img src="../../../assets/svg/other/searchLoading.svg" alt="Loading...">
+                    </div>
+                    <div id="city" *ngFor="let city of cities" (click)="selectCity(city)" class="city">{{city.name}}</div>
+                </div>
+            </div>
+            <div class="filter">
+                <span>Search</span>
+                <input type="text" placeholder="By name">
+            </div>
+            <div class="filter">
+                <span>All Categories</span>
+                <div class="categories" [ngStyle]="{'height': navBarChange ? 'calc(100vh - 308px)' : 'calc(100vh - 343px)'}">
+                    <div *ngFor="let type of builderTypes" class="other-builder" [routerLink]="type.routerLink">
+                        <img [src]="type.src" [alt]="type.alt" height="40">
+                        <span>{{type.type}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="builder-list">
+        <div *ngFor="let builder of builders" class="builder-card">
+            <div class="builder-profile-picture">
+                <img src="./../../../assets/images/dp.jpg" alt="dp">
+            </div>
+            <div class="builder-details">
+                <div class="name-address">
+                    <h3>{{builder.firstName}} {{builder.lastName}}</h3>
+                    <p>{{builder.city}}</p>
+                    <p>{{builder.address.line1}}, {{builder.address.line2}}, {{builder.address.line3}}</p>
+                    <p>{{builder.phoneNumber}}</p>
+                </div>
+                <div class="other-details">
+                    <div>
+                        <svg *ngFor="let index of getStarColor(builder.stars)" height="15px" width="15px" viewBox="0 -10 511.98685 511" xmlns="http://www.w3.org/2000/svg">
+                            <path [ngStyle]="{'fill': index ? '#ffc107' : '#b2b2b2'}" d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0"/>
+                        </svg>
+                    </div>
+                    <div class="other-abilities">
+                        <div *ngFor="let item of builder.otherAbility; let i = index">
+                            <img *ngIf="getIconPath(item) && i < 4" [src]="getIconPath(item).src" alt="" [title]="getIconPath(item).type" class="icon">
+                        </div>
+                    </div>
+                    <button>View</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

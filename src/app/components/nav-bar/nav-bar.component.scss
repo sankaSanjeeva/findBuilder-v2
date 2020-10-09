@@ -1,3 +1,6 @@
+$navbar-height-p: 100px;
+$navbar-height-s: 65px;
+
 #to-top-button {
     display: inline-block;
     width: 50px;
@@ -47,21 +50,22 @@ header{
 
 @media (max-width: 767px) {
     .close-side-menu{
-        max-width: 120rem;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 0 20px;
         // background-color: white;
 
         .nav{
             width: 100%;
-            height: 10rem;
+            height: $navbar-height-p;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid rgba(255,255,255,.05);
+            transition: height .5s ease;
         
             .logo{
-                font-size: 3.5rem;
+                font-size: 35px;
                 font-weight: bold;
             }
     
@@ -135,8 +139,8 @@ header{
                 display: inline-block;
                 background-color: #313131;
                 color: #fff;
-                padding: 1rem 2rem;
-                border-radius: 2rem;
+                padding: 10px 20px;
+                border-radius: 20px;
                 cursor: pointer;
                 transition: background-color .5s ease;
             }
@@ -171,10 +175,10 @@ header{
     /*Apply styles after scroll*/
     .scrolling-active{
         background-color: #fff;
-        box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+        box-shadow: 0 3px 10px rgba(0,0,0,.1);
 
         .nav{
-            height: 6.6rem;
+            height: $navbar-height-s;
 
             .side-menu-open {
                 fill: #333333;
@@ -190,14 +194,14 @@ header{
     }
     
     .container{
-        max-width: 120rem;
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1.5rem;
+        padding: 0 20px;
     }
     
     .nav{
         width: 100%;
-        height: 10rem;
+        height: $navbar-height-p;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -207,11 +211,10 @@ header{
         a{
             text-decoration: none;
             color: #fff;
-            font-size: 1.4rem;
         }
     
         .logo{
-            font-size: 3.5rem;
+            font-size: 35px;
             font-weight: bold;
         }
     }
@@ -220,12 +223,12 @@ header{
         list-style: none;
         display: flex;
         margin-right: auto;
-        margin-left: 4rem;
+        margin-left: 100px;
     }
     
     .nav-link{
         text-transform: uppercase;
-        margin: 0 2rem;
+        margin: 0 20px;
         position: relative;
     }
     
@@ -255,8 +258,9 @@ header{
         display: inline-block;
         background-color: #fff;
         color: #313131;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
         transition: background-color .5s ease;
     }
     
@@ -274,10 +278,10 @@ header{
     /*Apply styles after scroll*/
     .scrolling-active{
         background-color: #fff;
-        box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+        box-shadow: 0 3px 10px rgba(0,0,0,.1);
 
         .nav{
-            height: 6.6rem;
+            height: $navbar-height-s;
 
             a{
                 color: #313131;

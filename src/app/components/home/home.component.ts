@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BuilderType } from 'src/app/models/builder-type.model';
+import { JsonDataService } from 'src/app/services/json-data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  builderTypes: BuilderType[] = [];
 
-  constructor() { }
+  constructor(private jsonData: JsonDataService) { }
 
   ngOnInit(): void {
+    this.jsonData.getBuilderTypes().subscribe((res: BuilderType[]) => {
+      this.builderTypes = res;
+    });
   }
 
   goToCategory(): void {
