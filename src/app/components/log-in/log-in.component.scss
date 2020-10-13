@@ -1,0 +1,149 @@
+.container {
+    --navbar-height-secondary: 65px;
+    height: calc(100vh - var(--navbar-height-secondary));
+    min-height: 800px;
+    margin: auto;
+    max-width: 960px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .left-img {
+        position: absolute;
+        left: 0;
+        height: 400px;
+    }
+
+    .login-form {
+        width: 400px;
+        height: 625px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px 3px #00000040;
+        z-index: 1;
+
+        .form-title{
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #F03658;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .form-body {
+            margin: auto 50px;
+
+            .input-title {
+                font-size: 16px;
+                margin-bottom: 10px;
+                cursor: default;
+            }
+
+            .login-input {
+                width: 300px;
+                height: 50px;
+                outline: none;
+                border: 2px solid rgb(112 112 112 / 0.5);
+                padding-left: 10px;
+                font-size: 16px;
+                font-family: Raleway, sans-serif;
+                border-radius: 5px;
+                margin-bottom: 25px;
+            }
+
+            .login-input:focus {
+                border: 2px solid #F03658;
+            }
+
+            .forgot-text {
+                color: #737373;
+                cursor: pointer;
+            }
+            
+            .forgot-text:hover {
+                color: #F03658;
+            }
+
+            .remember-info {
+                margin-top: 25px;
+                display: flex;
+                align-items: center;
+
+                .check-box {
+                    height: 20px;
+                    width: 20px;
+                    cursor: pointer;
+                }
+
+                .text {
+                    padding-left: 10px;
+                    cursor: default;
+                }
+
+                .info-icon {
+                    padding-left: 5px;
+                }
+            }
+
+            .sign-in-button {
+                width: 100%;
+                height: 50px;
+                margin-top: 25px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                background-color: #f03658;
+                font-size: 16px;
+                color: white;
+                box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 31%);
+                transition: all 300ms ease-in-out;
+            }
+
+            .sign-in-button:hover {
+                background-color: white;
+                color: #f03658;
+            }
+
+            .sign-in-button:active {
+                background-color: #f03658;
+                color: white;
+            }
+
+            .need-help {
+                margin-top: 25px;
+                width: 100%;
+                text-align: center;
+                cursor: default;
+
+                .visit-help {
+                    color: #737373;
+                    cursor: pointer;
+                }
+                .visit-help:hover {
+                    color: #F03658;
+                }
+            }
+        }
+
+        .register {
+            text-align: center;
+            margin-top: 110px;
+            color: #737373;
+            cursor: pointer;
+        }
+        .register:hover {
+            color: #F03658;
+        }
+    }
+
+    .right-img {
+        position: absolute;
+        right: 0;
+        height: 400px;
+    }
+}

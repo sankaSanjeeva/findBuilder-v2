@@ -1,7 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { JsonDataService } from '../../services/json-data.service';
+import { BuilderService } from '../../services/builder.service';
 import { BuilderType } from '../../models/builder-type.model';
+import { Builder } from '../../models/builder.model';
 
 @Component({
   selector: 'app-builders-list',
@@ -12,92 +14,17 @@ export class BuildersListComponent implements OnInit {
 
   type: string;
   navBarChange: boolean;
-  builders = [
-    {
-      firstName: 'Sanka',
-      lastName: 'Sanjeeva',
-      city: 'Badulla',
-      address: {
-        line1: 'Udawela Junction',
-        line2: 'Nawela',
-        line3: 'Mirahawatta'
-      },
-      phoneNumber: '077 ### ####',
-      stars: 5,
-      otherAbility: [108, 102, 105, 108, 102, 105]
-    },
-    {
-      firstName: 'Jagath',
-      lastName: 'Kumara',
-      city: 'Kandy',
-      address: {
-        line1: 'No. 26',
-        line2: 'Mathale Road',
-        line3: 'Kulugammana'
-      },
-      phoneNumber: '071 ### ####',
-      stars: 3,
-      otherAbility: [103, 104, 108]
-    },
-    {
-      firstName: 'Dilhara',
-      lastName: 'Madhusha',
-      city: 'Galle',
-      address: {
-        line1: 'Dikwatuna',
-        line2: 'Thangalla Road',
-        line3: 'Galle'
-      },
-      phoneNumber: '077 ### ####',
-      stars: 1,
-      otherAbility: [110, 102]
-    },
-    {
-      firstName: 'Sanka',
-      lastName: 'Sanjeeva',
-      city: 'Badulla',
-      address: {
-        line1: 'Udawela Junction',
-        line2: 'Nawela',
-        line3: 'Mirahawatta'
-      },
-      phoneNumber: '077 ### ####',
-      stars: 4,
-      otherAbility: [118, 101, 105]
-    },
-    {
-      firstName: 'Jagath',
-      lastName: 'Kumara',
-      city: 'Kandy',
-      address: {
-        line1: 'No. 26',
-        line2: 'Mathale Road',
-        line3: 'Kulugammana'
-      },
-      phoneNumber: '071 ### ####',
-      stars: 3,
-      otherAbility: [107, 114, 108]
-    },
-    {
-      firstName: 'Dilhara',
-      lastName: 'Madhusha',
-      city: 'Galle',
-      address: {
-        line1: 'Dikwatuna',
-        line2: 'Thangalla Road',
-        line3: 'Galle'
-      },
-      phoneNumber: '077 ### ####',
-      stars: 2,
-      otherAbility: [100, 102, 103]
-    }
-  ];
+  builders: Builder[];
   builderTypes: BuilderType[] = [];
   cities = [];
   selectedCity = {name: '', id: ''};
   searchLoading: boolean;
 
-  constructor(private route: ActivatedRoute, private jsonData: JsonDataService) {
+  constructor(
+    private route: ActivatedRoute,
+    private jsonData: JsonDataService,
+    private builderService: BuilderService
+    ) {
     this.navBarChange = false;
     this.searchLoading = false;
   }
@@ -106,6 +33,9 @@ export class BuildersListComponent implements OnInit {
     this.type = this.route.snapshot.paramMap.get('type');
     this.jsonData.getBuilderTypes().subscribe((res: BuilderType[]) => {
       this.builderTypes = res;
+    });
+    this.builderService.getBuilders().subscribe((res: Builder[]) => {
+      this.builders = res;
     });
   }
 
