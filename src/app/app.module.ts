@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProfileComponent } from './components/profile/profile.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BuildersListComponent } from './components/builders-list/builders-list.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { BuildersListComponent } from './components/builders-list/builders-list.
     PageNotFoundComponent,
     ProfileComponent,
     ContactComponent,
-    BuildersListComponent
+    BuildersListComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

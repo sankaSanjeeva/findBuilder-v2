@@ -19,6 +19,7 @@ export class BuildersListComponent implements OnInit {
   cities = [];
   selectedCity = {name: '', id: ''};
   searchLoading: boolean;
+  buildersLoading: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,9 +35,7 @@ export class BuildersListComponent implements OnInit {
     this.jsonData.getBuilderTypes().subscribe((res: BuilderType[]) => {
       this.builderTypes = res;
     });
-    this.builderService.getBuilders().subscribe((res: Builder[]) => {
-      this.builders = res;
-    });
+    this.loadBuilders();
   }
 
   @HostListener('window:scroll')
@@ -58,6 +57,14 @@ export class BuildersListComponent implements OnInit {
     } else {
       this.cities = [];
     }
+  }
+
+  loadBuilders(): void {
+    this.buildersLoading = true;
+    this.builderService.getBuilders().subscribe((res: Builder[]) => {
+      this.builders = res;
+      this.buildersLoading = false;
+    });
   }
 
   cityChanged(e): void {

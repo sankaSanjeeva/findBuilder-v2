@@ -1,0 +1,235 @@
+.container {
+    margin: auto;
+    padding: 10px 0;
+    max-width: 960px;
+
+    .register-form {
+        position: relative;
+        width: 100%;
+        padding: 75px 50px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px 2px #0000002e;
+
+        .form-title {
+            font-size: 30px;
+            color: #F03658;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .input-line {
+            margin-top: 25px;
+
+            .main-title {
+                font-size: 16px;
+                margin-bottom: 10px;
+                cursor: default;
+            }
+
+            .inputs {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                position: relative;
+
+                .input {
+                    width: 260px;
+                    height: 50px;
+                    outline: none;
+                    border: 2px solid rgb(112 112 112 / 0.5);
+                    padding-left: 10px;
+                    font-size: 16px;
+                    font-family: Raleway, sans-serif;
+                    border-radius: 5px;
+                }
+                .input:focus {
+                    border: 2px solid #F03658;
+                }
+
+                .city-list {
+                    position: absolute;
+                    top: 52px;
+                    width: 260px;
+                    background-color: rgba(255, 255, 255, 0.9);
+                    z-index: 10;
+
+                    .loading-svg {
+                        width: 98%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .city {
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 10px;
+                        margin: 5px;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+
+                    .city:hover {
+                        background-color: #b2b2b2;
+                    }
+                }
+
+                .select-type {
+                    display: flex;
+                    align-items: center;
+                    overflow-x: auto;
+
+                    .selected-type {
+                        height: 30px;
+                        margin: 0 5px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 10px;
+                        white-space: nowrap;
+                        border-radius: 5px;
+                        box-shadow: 2px 2px 10px 2px #0000002e;
+
+                        .remove-icon {
+                            margin-left: 10px;
+                            opacity: 0.5;
+                            cursor: pointer;
+                            transition: opacity 300ms ease-in-out;
+                        }
+
+                        .remove-icon:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .select-type::-webkit-scrollbar{
+                    height: 5px;
+                }
+
+                .builder-type {
+                    width: 260px;
+                    max-height: 190px;
+                    background-color: rgb(255, 255, 255);
+                    position: absolute;
+                    top: 53px;
+                    border-radius: 5px;
+                    overflow-y: auto;
+                    box-shadow: 2px 2px 10px 2px #0000002e;
+
+                    .type {
+                        display: flex;
+                        align-items: center;
+                        padding-left: 10px;
+                        margin: 5px;
+                        cursor: pointer;
+                        border-radius: 5px;
+
+                        span {
+                            margin-left: 15px;
+                        }
+                    }
+
+                    .type:hover {
+                        background-color: #b2b2b2;
+                    }
+                }
+
+                .builder-type::-webkit-scrollbar{
+                    width: 1px;
+                }
+                .builder-type:hover::-webkit-scrollbar{
+                    width: 5px;
+                }
+            }
+        }
+
+        .agree-terms {
+            display: flex;
+            align-items: center;
+            margin-top: 25px;
+
+            .check-box {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+
+            .agree-text {
+                padding-left: 10px;
+                cursor: pointer;
+            }
+
+            .privacy {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .privacy:hover {
+                color: #F03658;
+            }
+        }
+
+        .buttons {
+            margin-top: 25px;
+
+            .submit-button {
+                width: 260px;;
+                height: 50px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                margin-right: 25px;
+                cursor: pointer;
+                background-color: #f03658;
+                font-size: 16px;
+                color: white;
+                box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 31%);
+                transition: all 300ms ease-in-out;
+            }
+
+            .submit-button:hover {
+                background-color: white;
+                color: #f03658;
+            }
+
+            .submit-button:active {
+                background-color: #f03658;
+                color: white;
+            }
+
+            .sign-in-button {
+                width: 260px;;
+                height: 50px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                background-color: white;
+                font-size: 16px;
+                color: #f03658;
+                box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 31%);
+                transition: all 300ms ease-in-out;
+            }
+
+            .sign-in-button:hover {
+                background-color: #f03658;
+                color: white;
+            }
+
+            .sign-in-button:active {
+                background-color: white;
+                color: #f03658;
+            }
+        }
+
+        .image {
+            position: absolute;
+            bottom: 175px;
+            right: 100px;
+
+            img {
+                width: 450px;
+            }
+        }
+    }
+}

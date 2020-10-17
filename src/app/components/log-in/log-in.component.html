@@ -6,19 +6,19 @@
             <div class="input-title">User Name</div>
             <input class="login-input" type="text">
             <div class="input-title">Password</div>
-            <input class="login-input" type="text">
+            <input class="login-input" type="password">
             <a class="forgot-text">Forgot User Name or Password?</a>
             <div class="remember-info">
                 <input class="check-box" type="checkbox" name="remember" id="remember">
-                <div class="text">Remember this device</div>
+                <label for="remember" class="text">Remember this device</label>
                 <img class="info-icon" src="../../../assets/images/login/info.svg" alt="">
             </div>
-            <button class="sign-in-button">Sign In</button>
+            <button class="sign-in-button" type="submit">Sign In</button>
             <div class="need-help">
                 Need help? <a class="visit-help">Visit our Help Center</a>
             </div>
         </div>
-        <div class="register">
+        <div routerLink="/register" class="register">
             Don't have an employee account?
         </div>
     </div>

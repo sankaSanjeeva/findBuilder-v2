@@ -1,5 +1,5 @@
 .container {
-    --navbar-height-secondary: 65px;
+    --navbar-height-secondary: 100px;
     height: calc(100vh - var(--navbar-height-secondary));
     min-height: 800px;
     margin: auto;
@@ -20,7 +20,7 @@
         height: 625px;
         background-color: white;
         border-radius: 5px;
-        box-shadow: 3px 3px 10px 3px #00000040;
+        box-shadow: 2px 2px 10px 2px #0000002e;
         z-index: 1;
 
         .form-title{
@@ -81,7 +81,7 @@
 
                 .text {
                     padding-left: 10px;
-                    cursor: default;
+                    cursor: pointer;
                 }
 
                 .info-icon {
@@ -134,6 +134,7 @@
             text-align: center;
             margin-top: 110px;
             color: #737373;
+            outline: none;
             cursor: pointer;
         }
         .register:hover {

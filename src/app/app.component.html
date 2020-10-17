@@ -1,4 +1,4 @@
 <app-nav-bar></app-nav-bar>
-<div class="router-outlet">
+<div [ngStyle]="{'margin-top': navBarChange ? '65px' : '100px'}">
   <router-outlet></router-outlet>
 </div>

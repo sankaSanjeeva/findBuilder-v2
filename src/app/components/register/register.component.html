@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="register-form">
+        <div class="form-title">Registration</div>
+        <div class="input-line">
+            <div class="main-title">Name</div>
+            <div class="inputs">
+                <input class="input" type="text" placeholder="First">
+                <input class="input" type="text" placeholder="Last">
+                <input class="input" type="text" placeholder="Other">
+            </div>
+        </div>
+        <div class="input-line">
+            <div class="main-title">Address</div>
+            <div class="inputs">
+                <input class="input" type="text" placeholder="Line1">
+                <input class="input" type="text" placeholder="Line2">
+                <input class="input" type="text" placeholder="Line3">
+            </div>
+        </div>
+        <div class="input-line">
+            <div class="main-title">NIC</div>
+            <div class="inputs">
+                <input class="input" type="text" placeholder="Identity Card Number">
+            </div>
+        </div>
+        <div class="input-line">
+            <div class="main-title">Telephone</div>
+            <div class="inputs">
+                <input class="input" type="text" placeholder="0123456789">
+            </div>
+        </div>
+        <div class="input-line">
+            <div class="main-title">City</div>
+            <div class="inputs">
+                <input class="input" [(ngModel)]="selectedCity.name" (ngModelChange)="cityChanged($event)" type="text"
+                    placeholder="City">
+                <div class="city-list">
+                    <div *ngIf="searchLoading" class="loading-svg">
+                        <img src="../../../assets/svg/other/searchLoading.svg" alt="Loading...">
+                    </div>
+                    <div id="city" *ngFor="let city of cities" (click)="selectCity(city)" class="city">{{city.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-line">
+            <div class="main-title">Type</div>
+            <div class="inputs">
+                <div class="input select-type">
+                    <div *ngFor="let type of selectedBuilderTypes" class="selected-type">
+                        <span>{{type.type}}</span>
+                        <span class="remove-icon" (click)="deSelectBuilderType(type)">
+                            <svg height="20" viewBox="0 0 24 24" width="20">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div *ngIf="showBuildingTypes" class="builder-type">
+                    <div *ngFor="let type of builderTypes" class="type" (click)="selectBuilderType(type)">
+                        <img [src]="type.src" [alt]="type.alt" height="40">
+                        <span>{{type.type}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agree-terms">
+            <input class="check-box" type="checkbox" name="agree" id="agree">
+            <label for="agree" class="agree-text">I agree to the terms and conditions of&nbsp;</label>
+            <span class="privacy">Privacy Policy</span>
+        </div>
+        <div class="buttons">
+            <button class="submit-button">Register</button>
+            <button class="sign-in-button">Sign In</button>
+        </div>
+        <div class="image">
+            <img src="../../../assets/images/register/builders.png" alt="builders">
+        </div>
+    </div>
+</div>
